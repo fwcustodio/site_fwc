@@ -58,7 +58,7 @@ class Portfolio extends React.Component {
 							DevMaker
 						</p>
 						<hr></hr>
-						<PortfolioCards />
+						<PortfolioCards Completo={true} />
 					</div>
 				</section>
 				<PricingMessage

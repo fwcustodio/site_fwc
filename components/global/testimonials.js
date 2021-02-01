@@ -8,15 +8,15 @@ const Testimonials = (props) => {
 	const testimonials = [
 		{
 			comment:
-				'Conhecemos a FWC em uma busca por ajuda para portar nosso app em Flutter para o ambiente iOS. Nosso time estava sobrecarregado e tinhamos pouca experiência com esse ambiente. Após uma troca de informações inicial, que foi conduzida de forma muito eficiente para compreender o nosso cenário, desenvolveram a solução e nos auxiliou em todo o processo. Recomendamos fortemente.',
+				'Conhecemos a FWC em uma busca por ajuda para portar nosso app em Flutter para o ambiente iOS. Nosso time estava sobrecarregado e tinhamos pouca experiência com esse ambiente. Após uma troca de informações inicial, que foi conduzida de forma muito eficiente para compreender o nosso cenário, desenvolveram a solução e nos auxiliaram em todo o processo. Recomendamos fortemente.',
 			name: 'Fábio Caldeira ',
-			works_at: 'Efeso',
+			works_at: 'Efeso Consulting',
 			avatar:
 				'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
 		},
 		{
 			comment:
-				'Desenvolvemos projetos anteriormente na área de aplicativos, e a FWC, possue alguns diferenciais, como um forte compromisso com o que é acordado, e grande rapidez na reposta aos problemas que possam ocorrer ao longo do projeto. Recomendamos demais o trabalho da FWC. ',
+				'Desenvolvemos projetos anteriormente na área de aplicativos, e a FWC possue alguns diferenciais, como um forte compromisso com o que é acordado e grande rapidez na resposta aos problemas que possam ocorrer ao longo do projeto. Recomendamos demais o trabalho da FWC Tecnologia. ',
 			name: 'Glauber Lima ',
 			works_at: 'Buy Care Corretora',
 			avatar:
