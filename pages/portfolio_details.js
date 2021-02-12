@@ -12,37 +12,34 @@ import PricingMessage from '../components/global/pricing_message';
 import { IPhoneX } from 'react-device-frames';
 
 import PricingButton from '../components/global/pricing_button';
+import { getProjetoDetalhes } from '../servicos';
 
 const PortfolioDetails = () => {
-	const [project, setProject] = useState(false);
+	const [project, setProject] = useState({});
 	const [current_image, setCurrentImage] = useState(0);
 	let curr_img;
 	let number_of_images;
 	let to_insert;
-	useEffect(async () => {
+	useEffect(() => {
 		async function helper() {
 			let current_url = document.location.href;
 			current_url = new URL(current_url);
 			let project_id = current_url.searchParams.get('id');
-			axios
-				.get(
-					'https://run.mocky.io/v3/f0d32df7-648f-483c-b648-6c9c45350451?id=' +
-						project_id
-				)
-				.then(async (res) => {
-					await setProject(res.data);
-					let img_list = res.data.carousel_images;
-					let number_of_images = res.data.carousel_images.length;
-					let curr_img = 0;
-					setInterval(() => {
-						console.log(curr_img);
-						setCurrentImage(curr_img);
-						curr_img++;
-						if (curr_img >= number_of_images) {
-							curr_img = 0;
-						}
-					}, 4000);
-				});
+
+			let ProjetoDetalhes = await getProjetoDetalhes(project_id);
+			setProject(ProjetoDetalhes.data);
+
+			console.log('ProjetoDetalhes : ' + JSON.stringify(ProjetoDetalhes));
+
+			let curr_img = 0;
+			setInterval(() => {
+				console.log(curr_img);
+				setCurrentImage(curr_img);
+				curr_img++;
+				if (curr_img >= number_of_images) {
+					curr_img = 0;
+				}
+			}, 4000);
 		}
 		helper();
 	}, []);
@@ -54,25 +51,27 @@ const PortfolioDetails = () => {
 			{project != false ? (
 				<div>
 					<main>
-						{project.carousel_images.map((img) => {
-							<img src={img} style={{ display: 'none' }} />;
-						})}
+						{project &&
+							project.carousel_images &&
+							project.carousel_images.map((img) => {
+								<img src={img} style={{ display: 'none' }} />;
+							})}
 						<section className='text-light background-primary waves'>
 							<div className='spacer' />
 							<div className='page-header-content'>
 								<div className='container'>
 									<div className='row align-items-center text-center'>
 										<div className='col-lg-6'>
-											<h1 className='page-header-title'>{project.title}</h1>
+											<h1 className='page-header-title'>{project.nome}</h1>
 											<p className='page-header-text mb-5'>
-												{project.description}
+												{project.descricao_curta}
 											</p>
 											<div className='mb-10'>
-												{project.appstore ? (
+												{project.link_apple ? (
 													<a
 														className='mr-3'
 														target='_blank'
-														href={project.appstore_url}
+														href={project.link_apple}
 													>
 														<img
 															style={{ height: '40px' }}
@@ -82,8 +81,8 @@ const PortfolioDetails = () => {
 												) : (
 													''
 												)}
-												{project.playstore ? (
-													<a target='_blank' href={project.playstore_url}>
+												{project.link_google ? (
+													<a target='_blank' href={project.link_google}>
 														<img
 															style={{ height: '40px' }}
 															src='/static/playstore_badge.svg'
@@ -110,10 +109,15 @@ const PortfolioDetails = () => {
 												>
 													<FontAwesomeIcon icon={faArrowLeft} />
 												</button>
+
 												<IPhoneX
 													width={320}
 													height={640}
-													screenshot={project.carousel_images[current_image]}
+													screenshot={
+														project &&
+														project.carousel_images &&
+														project.carousel_images[current_image]
+													}
 												></IPhoneX>
 
 												<button
@@ -151,9 +155,7 @@ const PortfolioDetails = () => {
 										<img src={project.post_image} className='img-fluid' />
 										<br />
 										<br />
-										<p style={{ textAlign: 'justify' }}>
-											{project.post_content}
-										</p>
+										<p style={{ textAlign: 'justify' }}>{project.descricao}</p>
 										<hr></hr>
 										<a href='/portfolio'>
 											<button

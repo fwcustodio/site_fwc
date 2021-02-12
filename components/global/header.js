@@ -59,7 +59,7 @@ const Header = () => {
 				</div>
 				<Navbar className='background-primary header' expand='lg'>
 					<Navbar.Brand className='text-light' href='/'>
-						<img src='/static/logo.png' width='130' />
+						<img src='/static/logo_fundo_vermelho.png' width='130' />
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
