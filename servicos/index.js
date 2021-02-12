@@ -1,5 +1,5 @@
 const axios = require('axios');
-//const BaseAPI = 'http://localhost:3001/api';
+//const BaseAPI = 'http://localhost:3001';
 const BaseAPI = 'https://fwctecnologiaapi.com.br';
 ///
 
