@@ -1,9 +1,8 @@
 const axios = require('axios');
 //const BaseAPI = 'http://localhost:3001';
 const BaseAPI = 'https://fwctecnologiaapi.com.br';
-///
 
-http: const getProjetosHome = async () => {
+const getProjetosHome = async () => {
 	return await axios.get(`${BaseAPI}/projetos/getProjetosHome`);
 };
 
