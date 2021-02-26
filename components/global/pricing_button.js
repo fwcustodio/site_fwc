@@ -8,7 +8,7 @@ const PricingButton = () => {
 			className='btn-fixed-effect'
 			style={{
 				boxShadow:
-					'0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;',
+					'0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important',
 				borderRadius: '10px',
 			}}
 		>
@@ -19,13 +19,14 @@ const PricingButton = () => {
 					right: '4%',
 					left: 'auto',
 					textDecoration: 'none',
+					minWidth: '300px',
 					boxShadow:
 						'0 5px 5px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.19) !important;',
 					borderRadius: '10px',
 					paddingRight: '5px',
 					paddingLeft: '5px',
 				}}
-				href='#'
+				href='/quanto_custa'
 			>
 				<div class='p-3  rounded-left background-primary-darker'>
 					<FontAwesomeIcon icon={faCalculator} />

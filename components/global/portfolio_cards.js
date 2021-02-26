@@ -57,7 +57,7 @@ const PortfolioCards = (props) => {
 							<Fade bottom delay={index * 100}>
 								<div
 									key={index}
-									className='col-lg-6 col-md-12 mb-6 custom-card'
+									className='col-md  mb-6 custom-card'
 								>
 									<a
 										href={'/portfolio_details?id=' + item.id}

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/global/header';
 const axios = require('axios');
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/global/footer';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -15,19 +15,30 @@ import PricingButton from '../components/global/pricing_button';
 import { getProjetoDetalhes } from '../servicos';
 
 const PortfolioDetails = () => {
+	const [show_header, setShowHeader] = useState(false);
 	const [project, setProject] = useState({});
 	const [current_image, setCurrentImage] = useState(0);
 	let curr_img;
 	let number_of_images;
 	let to_insert;
 	useEffect(() => {
+		setShowHeader(true);
 		async function helper() {
 			let current_url = document.location.href;
 			current_url = new URL(current_url);
 			let project_id = current_url.searchParams.get('id');
 
 			let ProjetoDetalhes = await getProjetoDetalhes(project_id);
-			setProject(ProjetoDetalhes.data);
+
+			//COLOCAR API NOVAMENTE
+			setProject({
+				nome: 'Teste',
+				descricao_curta: 'Uma breve descrição. Volte para API como era antes no portfolio_details.js',
+				link_apple: 'https://google.com',
+				link_google: 'https://google.com',
+				post_image: 'https://www.devmaker.com.br/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZnc9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8f2221ccf970a1e63d2ca5b1838da98b405a58c6/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQWdBRWFRSUFBdz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--633a0f193e2de4dd111d3811e0b936b5c19249a8/capa-hub.png',
+				descricao: 'Apenas uma postagem nisto que parece um blog.'
+			});
 
 			console.log('ProjetoDetalhes : ' + JSON.stringify(ProjetoDetalhes));
 
@@ -46,7 +57,7 @@ const PortfolioDetails = () => {
 
 	return (
 		<>
-			<Header></Header>
+			{show_header ? <Header></Header> : ''}
 			<PricingButton />
 			{project != false ? (
 				<div>
@@ -58,18 +69,19 @@ const PortfolioDetails = () => {
 							})}
 						<section className='text-light background-primary waves'>
 							<div className='spacer' />
-							<div className='page-header-content'>
+							<div className='width-80-vw page-header-content'>
 								<div className='container'>
-									<div className='row align-items-center text-center'>
+									<div className='row align-items-center text-justify'>
 										<div className='col-lg-6'>
-											<h1 className='page-header-title'>{project.nome}</h1>
+											<h1 className='page-header-title text-left'>{project.nome}</h1>
 											<p className='page-header-text mb-5'>
 												{project.descricao_curta}
 											</p>
-											<div className='mb-10'>
+											<div className='mx-auto text-center'>
+												<div class="row" style={{width: 'fit-content'}}>
 												{project.link_apple ? (
 													<a
-														className='mr-3'
+														className='mr-2'
 														target='_blank'
 														href={project.link_apple}
 													>
@@ -91,14 +103,17 @@ const PortfolioDetails = () => {
 												) : (
 													''
 												)}
+												</div>
 											</div>
 										</div>
 
 										<div className='col-lg-6 z-1 pt-5'>
 											<div className='device-wrapper mx-auto mb-n15 text-center'>
 												<button
-													className='button-secondary'
-													style={{ marginRight: '-80px' }}
+													className='button-secondary font-weight-bold h2'
+													style={{ marginRight: '-95px',
+																	 backgroundColor: 'rgba(0,0,0,0)',
+																	 color: 'white' }}
 													onClick={() => {
 														if (current_image - 1 < 0) {
 															setCurrentImage(
@@ -107,12 +122,12 @@ const PortfolioDetails = () => {
 														} else setCurrentImage(current_image - 1);
 													}}
 												>
-													<FontAwesomeIcon icon={faArrowLeft} />
+												 <FontAwesomeIcon style={{fontSize: '150% !important'}} icon={faAngleLeft}/>
 												</button>
 
 												<IPhoneX
-													width={320}
-													height={640}
+													width={280}
+													height={600}
 													screenshot={
 														project &&
 														project.carousel_images &&
@@ -121,8 +136,10 @@ const PortfolioDetails = () => {
 												></IPhoneX>
 
 												<button
-													className='button-secondary'
-													style={{ marginLeft: '-80px' }}
+													className='button-secondary font-weight-bold h2'
+													style={{ marginLeft: '-95px',
+																		backgroundColor: 'rgba(0,0,0,0)',
+																		color: 'white'  }}
 													onClick={() => {
 														if (
 															current_image + 1 >=
@@ -132,7 +149,7 @@ const PortfolioDetails = () => {
 														} else setCurrentImage(current_image + 1);
 													}}
 												>
-													<FontAwesomeIcon icon={faArrowRight} />
+													<FontAwesomeIcon  style={{fontSize: '150% !important'}} icon={faAngleRight}/>
 												</button>
 											</div>
 										</div>
@@ -147,7 +164,7 @@ const PortfolioDetails = () => {
 								d='M0,224L34.3,208C68.6,192,137,160,206,144C274.3,128,343,128,411,133.3C480,139,549,149,617,149.3C685.7,149,754,139,823,122.7C891.4,107,960,85,1029,69.3C1097.1,53,1166,43,1234,64C1302.9,85,1371,139,1406,165.3L1440,192L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z'
 							></path>
 						</svg>
-						<div className='sep-mobile' />
+						<div className='sep-mobile'/>
 						<section id='post' style={{ marginTop: '-5vh' }}>
 							<div className='width-80-vw text-center mb-5'>
 								<div className='row justify-content-center'>
@@ -178,7 +195,9 @@ const PortfolioDetails = () => {
 				message_title='Mãos a obra!'
 				message='Venha conosco e será nossa missão ajudar sua empresa a estruturar um projeto vencedor e entregá-lo pronto para trazer os resultados que tanto deseja.'
 				first_button='Solicite um orçamento'
+				first_button_link="/orcamento"
 				second_button='Entre em contato'
+				second_button_link="/contato"
 			/>
 			<Footer />
 		</>

@@ -1,11 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
-
+import {
+	faInstagram,
+	faLinkedin,
+	faFacebook,
+	faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
 	return (
 		<div>
-			<footer className='footer pt-10 p-5 mt-auto bg-dark text-light'>
-				<div className='container'>
+			<footer className='footer pt-5 pb-5 p-2 p-md-5 mt-auto bg-dark text-light'>
+				<div className='container '>
 					<div className='row'>
 						<div className='col-lg-12'>
 							<div className='footer-brand'>FWC Tecnologia Mobile Apps</div>
@@ -35,7 +40,7 @@ const Footer = () => {
 						</div>
 						<div className='col-lg-9'>
 							<div className='row'>
-								<div className='col-lg-3 col-md-6 mb-5 mb-lg-0'>
+								<div className='col-lg-4 col-md-6 mb-5 mb-lg-0 mt-5 mt-md-0'>
 									<div className='text-xs mb-4'>Institucional</div>
 									<ul className='list-unstyled mb-0'>
 										<li className='mb-2'>
@@ -55,7 +60,7 @@ const Footer = () => {
 										</li>
 									</ul>
 								</div>
-								<div className='col-lg-3 col-md-6 mb-5 mb-lg-0'>
+								<div className='col-lg-4 col-md-6 mb-5 mb-lg-0'>
 									<div className='text-xs mb-4'>Projetos</div>
 									<ul className='list-unstyled mb-0'>
 										<li className='mb-2'>
@@ -76,28 +81,45 @@ const Footer = () => {
 									</ul>
 								</div>
 
-								<div className='col-lg-3 col-md-6'>
+								<div className='col-lg-4 col-md-6'>
 									<div className='text-xs mb-4'>Contato</div>
 									<ul className='list-unstyled mb-0'>
 										<li className='mb-2'>
-											<a className='text-white' href='#'>
+											<a className='text-white' href='/quanto_custa'>
 												Quanto Custa Criar um App?
 											</a>
 										</li>
 										<li className='mb-2'>
-											<a className='text-white' href='#'>
+											<a className='text-white' href='/orcamento'>
 												Orçamento
 											</a>
 										</li>
 										<li className='mb-2'>
-											<a className='text-white' href='#'>
+											<a className='text-white' href='/contato'>
 												Entre em Contato
 											</a>
 										</li>
 										<li className='mb-2'>
-											<a className='text-white' href='#'>
+											<a className='text-white' href='/trabalhe_conosco'>
 												Trabalhe conosco
 											</a>
+										</li>
+										<li className='mb-2'>
+											<div className="header-top-social text-left">
+											<a target='blank' href='https://www.instagram.com/fwctecnologia'>
+								<FontAwesomeIcon icon={faInstagram} />
+							</a>
+							<a target='blank' href='https://www.facebook.com/fwctecnologia'>
+								<FontAwesomeIcon icon={faFacebook} />
+							</a>
+
+							<a
+								target='blank'
+								href='https://www.linkedin.com/company/fwc-tecnologia'
+							>
+								<FontAwesomeIcon icon={faLinkedin} />
+							</a>
+											</div>
 										</li>
 									</ul>
 									<div className='icon-list-social'></div>

@@ -32,7 +32,7 @@ const Header = () => {
 				}}
 			>
 				<div className='header-top background-primary-darker'>
-					<div className='header-top-content'>
+					<div className='header-top-content  width-80-vw'>
 						<div className='header-top-info'>
 							<FontAwesomeIcon icon={faEnvelope} /> contato@fwctecnologia.com.br
 							<FontAwesomeIcon icon={faPhone} style={{ marginLeft: '3vw' }} />
@@ -57,7 +57,8 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
-				<Navbar className='background-primary header' expand='lg'>
+				<div className="w-100 background-primary">
+				<Navbar className='background-primary header2 width-80-vw pb-md-0' expand='lg'>
 					<Navbar.Brand className='text-light' href='/'>
 						<img src='/static/logo_fundo_vermelho.png' width='130' />
 					</Navbar.Brand>
@@ -70,20 +71,21 @@ const Header = () => {
 							<Nav.Link className='text-light' href='/portfolio'>
 								Portfólio
 							</Nav.Link>
-							<Nav.Link className='text-light' href='#link'>
+							<Nav.Link className='text-light' href='/empresa'>
 								Empresa
 							</Nav.Link>
-							<Nav.Link className='text-light' href='#link'>
+							<Nav.Link className='text-light' href='/clientes'>
 								Clientes
 							</Nav.Link>
 						</Nav>
-						<a href='#link' className=''>
-							<button className='pricing-button color-primary'>
+						<a href='/orcamento'>
+							<button className='ml-0 ml-md-5 mb-2 mb-md-0 button-secondary font-weight-bolder color-primary'>
 								Orçamento <FontAwesomeIcon icon={faArrowRight} />
 							</button>
 						</a>
 					</Navbar.Collapse>
 				</Navbar>
+				</div>
 			</span>
 		</>
 	);
