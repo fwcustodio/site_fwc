@@ -18,6 +18,8 @@ import { IPhoneX } from 'react-device-frames';
 
 import PricingButton from '../components/global/pricing_button';
 import { getProjetoDetalhes } from '../servicos';
+import ReactDOM from 'react-dom';
+import ReactHtmlParser from 'react-html-parser';
 
 const PortfolioDetails = () => {
 	const [Inicio, setInicio] = useState(true);
@@ -79,7 +81,6 @@ const PortfolioDetails = () => {
 			}, 5000);
 		}
 	};
-
 	return (
 		<>
 			{show_header ? <Header></Header> : ''}
@@ -100,7 +101,14 @@ const PortfolioDetails = () => {
 											<h1 className='page-header-title text-left'>
 												{project.nome}
 											</h1>
-											<p className='page-header-text mb-5'>
+											<p
+												className='page-header-text mb-5'
+												style={{
+													textAlign: 'left',
+													marginTop: 15,
+													color: '#CA8072',
+												}}
+											>
 												{project.descricao_curta}
 											</p>
 											<div className='mx-auto text-center'>
@@ -206,10 +214,16 @@ const PortfolioDetails = () => {
 							<div className='width-80-vw text-center mb-5'>
 								<div className='row justify-content-center'>
 									<div className='col-lg-8'>
-										<img src={project.post_image} className='img-fluid' />
+										<img
+											src={project.banner_maior}
+											className='img-fluid'
+											style={{ marginTop: 20, marginBottom: 20 }}
+										/>
 										<br />
 										<br />
-										<p style={{ textAlign: 'justify' }}>{project.descricao}</p>
+										<p style={{ textAlign: 'left' }}>
+											{ReactHtmlParser(project.descricao)}
+										</p>
 										<hr></hr>
 										<a href='/portfolio'>
 											<button
