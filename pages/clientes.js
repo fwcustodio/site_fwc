@@ -9,12 +9,10 @@ import {
 	faCoffee,
 	faTv,
 	faCat,
-  faUserTie,
-  faPenNib,
-  faServer,
-  faTasks
-
-
+	faUserTie,
+	faPenNib,
+	faServer,
+	faTasks,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
@@ -27,22 +25,20 @@ import Footer from '../components/global/footer';
 import PricingButtonVar from '../components/global/pricing_button_var';
 
 class Clientes extends React.Component {
-
 	state = {
-		show_header: false
-	}
+		show_header: false,
+	};
 
 	componentDidMount() {
-		this.setState({show_header: true})
+		this.setState({ show_header: true });
 	}
 
 	render() {
 		return (
 			<>
 				{this.state.show_header ? <Header></Header> : ''}
-			
-			
-				<PricingButtonVar/>
+
+				<PricingButtonVar />
 				<section
 					style={{
 						paddingBottom: '20px',
@@ -53,21 +49,29 @@ class Clientes extends React.Component {
 							<div className='container py-5'>
 								<div className='row justify-content-center'>
 									<div>
-                    <div className="spacer"/>
+										<div className='spacer' />
 										<div className='width-80-vw text-center mb-10'>
-											<span className='h1 font-weight-bolder'>
-											 Clientes
-											</span>
-											<p className='lead'>
-                      Valorizamos e temos orgulho do relacionamento de confiança que desenvolvemos ao longo dos anos com nossos clientes. Esperamos trazer você também para fazer parte desse portfólio vencedor.
-            
+											<span className='h1 font-weight-bolder'>Clientes</span>
+											<p
+												className='lead'
+												style={{
+													fontSize: 17,
+													color: '#687281',
+													marginTop: 15,
+													marginBottom: 60,
+													maxWidth: 700,
+													marginLeft: 'auto',
+													marginRight: 'auto',
+												}}
+											>
+												Valorizamos e temos orgulho do relacionamento de
+												confiança que desenvolvemos ao longo dos anos com nossos
+												clientes. Esperamos trazer você também para fazer parte
+												desse portfólio vencedor.
 											</p>
 										</div>
 									</div>
 								</div>
-								
-									
-								
 							</div>
 						</div>
 					</div>
@@ -75,17 +79,17 @@ class Clientes extends React.Component {
 				{/*quarta seção*/}
 				<section className='mt-5 pb-5'>
 					<div className='width-80-vw text-left'>
-            <Clients/>
+						<Clients />
 					</div>
 				</section>
-				
-        <PricingMessage
+
+				<PricingMessage
 					message_title='Mãos a obra!'
 					message='Venha conosco e será nossa missão ajudar sua Clientes a estruturar um projeto vencedor e entregá-lo pronto para trazer os resultados que tanto deseja.'
 					first_button='Solicite um orçamento'
-					first_button_link="/orcamento"
+					first_button_link='/orcamento'
 					second_button='Entre em contato'
-					second_button_link="/contato"
+					second_button_link='/contato'
 					className='width-80-vw'
 				/>
 				<Footer />

@@ -36,7 +36,7 @@ class Empresa extends React.Component {
 	render() {
 		return (
 			<>
-				{this.state.show_header ? <Header></Header> : ''}
+				{this.state.show_header ? <Header /> : ''}
 
 				<PricingButtonVar />
 				<section
@@ -51,8 +51,21 @@ class Empresa extends React.Component {
 									<div>
 										<div className='spacer' />
 										<div className='text-center mb-10'>
-											<span className='h1 font-weight-bolder'>FWC</span>
-											<p className='lead'>
+											<span className='h1 font-weight-bolder'>
+												FWC Tecnologia
+											</span>
+											<p
+												className='lead'
+												style={{
+													fontSize: 17,
+													color: '#687281',
+													marginTop: 15,
+													marginBottom: 60,
+													maxWidth: 700,
+													marginLeft: 'auto',
+													marginRight: 'auto',
+												}}
+											>
 												Referência em desenvolvimento de aplicativos mobile
 											</p>
 										</div>
@@ -64,12 +77,23 @@ class Empresa extends React.Component {
 				</section>
 				{/*quarta seção*/}
 				<section className='mt-5 pb-5'>
-					<div className='width-80-vw text-left'>
+					<div
+						className='width-80-vw text-left'
+						style={{
+							fontSize: 17,
+							color: '#687281',
+							marginTop: 15,
+							marginBottom: 60,
+							maxWidth: 850,
+							marginLeft: 'auto',
+							marginRight: 'auto',
+						}}
+					>
 						<div>
-							<h4 class='h4 '>
+							<h4 class='h4 ' style={{ marginBottom: 20 }}>
 								<strong>Quem somos</strong>
 							</h4>
-							<p>
+							<p style={{ fontSize: 15, marginBottom: 35 }}>
 								Somos uma empresa especializada no desenvolvimento de
 								aplicativos móveis nas plataformas iOS e Android.<br></br>
 								<br></br>
@@ -86,10 +110,10 @@ class Empresa extends React.Component {
 								expectativas do cliente.
 							</p>
 							<hr></hr>
-							<h4 class='h4 '>
+							<h4 class='h4 ' style={{ marginBottom: 20, marginTop: 35 }}>
 								<strong>Por que escolher a FWC?</strong>
 							</h4>
-							<ul class='mb-0'>
+							<ul class='mb-0' style={{ fontSize: 15 }}>
 								<li>
 									<b>NFC (Near Field Communication)</b>: Tecnologia que permite
 									a troca de informações entre dispositivos wireless, sendo
@@ -113,15 +137,15 @@ class Empresa extends React.Component {
 								<li>
 									<b>Gestão/Contratação de serviços;</b>
 								</li>
-								<li>
+								<li style={{ marginBottom: 35 }}>
 									<b>Mobilidade urbana e logística.</b>
 								</li>
 							</ul>
 							<hr></hr>
-							<h4 class='h4 '>
+							<h4 class='h4 ' style={{ marginTop: 35 }}>
 								<strong>Filosofia de trabalho</strong>
 							</h4>
-							<p>
+							<p style={{ fontSize: 15, marginTop: 20 }}>
 								Junto com nosso cliente, desenhamos a solução ideal para atender
 								as demandas do seu negócio. O aplicativo é implantado para
 								trazer os resultados esperados e agregar valor ao negócio.

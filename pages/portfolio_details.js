@@ -107,12 +107,19 @@ const PortfolioDetails = () => {
 													textAlign: 'left',
 													marginTop: 15,
 													color: '#CA8072',
+													fontSize: 17,
 												}}
 											>
 												{project.descricao_curta}
 											</p>
 											<div className='mx-auto text-center'>
-												<div class='row' style={{ width: 'fit-content' }}>
+												<div
+													class='row'
+													style={{
+														width: 'fit-content',
+														marginLeft: 0,
+													}}
+												>
 													{project.link_apple ? (
 														<a
 															className='mr-2'
@@ -120,7 +127,7 @@ const PortfolioDetails = () => {
 															href={project.link_apple}
 														>
 															<img
-																style={{ height: '40px' }}
+																style={{ height: '40px', marginRight: 10 }}
 																src='/static/appstore_badge.svg'
 															/>
 														</a>

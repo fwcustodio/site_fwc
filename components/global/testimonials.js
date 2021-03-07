@@ -13,6 +13,7 @@ const Testimonials = (props) => {
 			works_at: 'Efeso Consulting',
 			avatar:
 				'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+			link_projeto: 'portfolio_details?id=6dDa4TnIqPJGT6DpGQzD',
 		},
 		{
 			comment:
@@ -21,6 +22,7 @@ const Testimonials = (props) => {
 			works_at: 'Buy Care Corretora',
 			avatar:
 				'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg',
+			link_projeto: 'portfolio_details?id=IB84Yv4m1qhTZN8DHkwb',
 		},
 	];
 	return (
@@ -30,10 +32,24 @@ const Testimonials = (props) => {
 					<div className='col-lg-6 mb-5' key={key}>
 						<div className='testimonial p-lg-5 text-center'>
 							<Fade bottom>
-								<p className='testimonial-quote h5'>{`"${item.comment}"`}</p>
+								<a
+									href={item.link_projeto}
+									target='_blank'
+									className='testimonial-quote h5'
+									style={{
+										fontSize: 22,
+										fontFamily:
+											'Metropolis,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+										fontWeight: 'normal',
+										color: '#CA8072',
+									}}
+								>{`"${item.comment}"`}</a>
 							</Fade>
 							<Fade top>
-								<div className='d-flex justify-content-center font-weight-light'>
+								<div
+									className='d-flex justify-content-center font-weight-light'
+									style={{ marginTop: 30 }}
+								>
 									<img
 										alt={item.name + ' avatar'}
 										className='rounded-circle mx-2'

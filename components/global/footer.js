@@ -5,6 +5,7 @@ import {
 	faLinkedin,
 	faFacebook,
 	faYoutube,
+	faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
 	return (
@@ -105,20 +106,29 @@ const Footer = () => {
 											</a>
 										</li>
 										<li className='mb-2'>
-											<div className="header-top-social text-left">
-											<a target='blank' href='https://www.instagram.com/fwctecnologia'>
-								<FontAwesomeIcon icon={faInstagram} />
-							</a>
-							<a target='blank' href='https://www.facebook.com/fwctecnologia'>
-								<FontAwesomeIcon icon={faFacebook} />
-							</a>
+											<div className='header-top-social text-left'>
+												<a target='blank' href='https://is.gd/jyAyfr'>
+													<FontAwesomeIcon icon={faWhatsapp} />
+												</a>
+												<a
+													target='blank'
+													href='https://www.instagram.com/fwctecnologia'
+												>
+													<FontAwesomeIcon icon={faInstagram} />
+												</a>
+												<a
+													target='blank'
+													href='https://www.facebook.com/fwctecnologia'
+												>
+													<FontAwesomeIcon icon={faFacebook} />
+												</a>
 
-							<a
-								target='blank'
-								href='https://www.linkedin.com/company/fwc-tecnologia'
-							>
-								<FontAwesomeIcon icon={faLinkedin} />
-							</a>
+												<a
+													target='blank'
+													href='https://www.linkedin.com/company/fwc-tecnologia'
+												>
+													<FontAwesomeIcon icon={faLinkedin} />
+												</a>
 											</div>
 										</li>
 									</ul>

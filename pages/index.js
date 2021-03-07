@@ -121,7 +121,10 @@ class Home extends React.Component {
 								</p>
 							</div>
 							<div className='col-lg-6'>
-								<p className='h4 lead mb-0'>
+								<p
+									className='h4 lead mb-0'
+									style={{ color: '#687281', fontSize: 17, lineHeight: 1.5 }}
+								>
 									Estabelecida em Cuiabá, a FWC está no mercado desde 2020 e é
 									referência em inovação, tecnologia e versatilidade.
 								</p>
@@ -143,11 +146,25 @@ class Home extends React.Component {
 								<div className='row justify-content-center'>
 									<div className='col-lg-8'>
 										<div className=' mb-10'>
-											<span className='h2'>
+											<p
+												className='h2'
+												style={{
+													fontSize: 21,
+													fontWeight: 'bold',
+													textAlign: 'center',
+												}}
+											>
 												Soluções em desenvolvimento de aplicativos mobile para
 												sua empresa
-											</span>
-											<p className='lead'>
+											</p>
+											<p
+												className='lead'
+												style={{
+													fontSize: 17,
+													textAlign: 'center',
+													color: '#687281',
+												}}
+											>
 												Conheça o trabalho que fazemos e as soluções que podemos
 												oferecer.
 											</p>
@@ -159,24 +176,78 @@ class Home extends React.Component {
 								<div className='row text-center'>
 									<div className='col-lg-4 mb-5 mb-lg-0'>
 										<Fade left>
-											<div className='big-icon background-primary'>
-												<FontAwesomeIcon icon={faMobile} />
+											<div
+												className='big-icon '
+												style={{
+													backgroundColor: 'rgb(241, 241, 241)',
+													//padding: 15,
+													borderColor: 'grey',
+													borderWidth: 0.5,
+													marginBottom: 30,
+												}}
+											>
+												<div
+													className='big-icon background-primary'
+													style={{
+														border: 'none',
+														marginBottom: 0,
+														width: 87,
+														height: 87,
+													}}
+												>
+													<FontAwesomeIcon icon={faMobile} />
+												</div>
 											</div>
 										</Fade>
-										<span className='h3'>Desenvolvimento Mobile</span>
-										<p className='mb-0'>
+										<span
+											className='h3'
+											style={{ fontSize: 19, fontWeight: 'bold' }}
+										>
+											Desenvolvimento Mobile
+										</span>
+										<p
+											className='mb-0'
+											style={{ marginTop: 15, color: '#687281' }}
+										>
 											Tecnologia de ponta no desenvolvimento de aplicativos
 											mobile para Android e iOS.
 										</p>
 									</div>
 									<div className='col-lg-4 mb-5 mb-lg-0'>
 										<Fade bottom>
-											<div className='big-icon background-primary'>
-												<FontAwesomeIcon icon={faCode} />
+											<div
+												className='big-icon '
+												style={{
+													backgroundColor: 'rgb(241, 241, 241)',
+													//padding: 15,
+													borderColor: 'grey',
+													borderWidth: 0.5,
+													marginBottom: 30,
+												}}
+											>
+												<div
+													className='big-icon background-primary'
+													style={{
+														border: 'none',
+														marginBottom: 0,
+														width: 87,
+														height: 87,
+													}}
+												>
+													<FontAwesomeIcon icon={faCode} />
+												</div>
 											</div>
 										</Fade>
-										<span className='h3'>Back-End & APIs</span>
-										<p className='mb-0'>
+										<span
+											className='h3'
+											style={{ fontSize: 19, fontWeight: 'bold' }}
+										>
+											Back-End & APIs
+										</span>
+										<p
+											className='mb-0'
+											style={{ marginTop: 15, color: '#687281' }}
+										>
 											Tudo que o seu aplicativo precisa para funcionar
 											plenamente na nuvem: infraestrutura completa de banco de
 											dados, servidores, APIs, etc.
@@ -184,12 +255,39 @@ class Home extends React.Component {
 									</div>
 									<div className='col-lg-4 mb-5 mb-lg-0'>
 										<Fade right>
-											<div className='big-icon background-primary'>
-												<FontAwesomeIcon icon={faPen} />
+											<div
+												className='big-icon '
+												style={{
+													backgroundColor: 'rgb(241, 241, 241)',
+													//padding: 15,
+													borderColor: 'grey',
+													borderWidth: 0.5,
+													marginBottom: 30,
+												}}
+											>
+												<div
+													className='big-icon background-primary'
+													style={{
+														border: 'none',
+														marginBottom: 0,
+														width: 87,
+														height: 87,
+													}}
+												>
+													<FontAwesomeIcon icon={faPen} />
+												</div>
 											</div>
 										</Fade>
-										<span className='h3'>Design Funcional</span>
-										<p className='mb-0'>
+										<span
+											className='h3'
+											style={{ fontSize: 19, fontWeight: 'bold' }}
+										>
+											Design Funcional
+										</span>
+										<p
+											className='mb-0'
+											style={{ marginTop: 15, color: '#687281' }}
+										>
 											Equipe especializada em design inovador, prático e
 											user-friendly. para Sistemas Web e Aplicativos Android e
 											iOS
@@ -203,8 +301,24 @@ class Home extends React.Component {
 				{/*quarta seção*/}
 				<section className='mt-5'>
 					<div className='width-80-vw text-center'>
-						<p className='h2'>Conheça nosso portfólio</p>
-						<p className='h3 font-weight-light'>
+						<p
+							className='h2'
+							style={{
+								fontSize: 21,
+								fontWeight: 'bold',
+								textAlign: 'center',
+							}}
+						>
+							Conheça nosso portfólio
+						</p>
+						<p
+							className='h3 font-weight-light'
+							style={{
+								fontSize: 17,
+								textAlign: 'center',
+								color: '#687281',
+							}}
+						>
 							Conheça alguns cases de sucesso desenvolvidos pela FWC
 						</p>
 						<hr></hr>
@@ -231,8 +345,24 @@ class Home extends React.Component {
 						<div className='row justify-content-center text-center'>
 							<div className=' '>
 								<div className='mb-10 width-80-vw'>
-									<span className='h2'>O que estão falando de nós</span>
-									<p className='lead p-3 width-80-vw'>
+									<span
+										className='h2'
+										style={{
+											fontSize: 21,
+											fontWeight: 'bold',
+											textAlign: 'center',
+										}}
+									>
+										O que estão falando de nós
+									</span>
+									<p
+										className='lead p-3 width-80-vw'
+										style={{
+											fontSize: 17,
+											textAlign: 'center',
+											color: '#687281',
+										}}
+									>
 										Nos tornamos referência de mercado pela qualidade e inovação
 										de nossos projetos e pela filosofia de trabalho.
 									</p>
@@ -284,8 +414,24 @@ class Home extends React.Component {
 					>
 						<div className='col-lg-8'>
 							<div className='text-center mb-10'>
-								<span className='h2'>Dúvidas frequentes</span>
-								<p className='lead p-3'>
+								<span
+									className='h2'
+									style={{
+										fontSize: 21,
+										fontWeight: 'bold',
+										textAlign: 'center',
+									}}
+								>
+									Dúvidas frequentes
+								</span>
+								<p
+									className='lead p-3'
+									style={{
+										fontSize: 17,
+										textAlign: 'center',
+										color: '#687281',
+									}}
+								>
 									Perguntas e dúvidas mais frequentes sobre a criação e
 									desenvolvimento de aplicativos mobile
 								</p>

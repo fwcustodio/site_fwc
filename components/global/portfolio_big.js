@@ -25,7 +25,7 @@ const PortfolioBig = (props) => {
 				<>
 					{index % 2 == 0 ? (
 						<Fade left>
-							<div className='card mb-5'>
+							<div className='card mb-5' style={{ marginTop: 25 }}>
 								<div className='row no-gutters'>
 									<div
 										className='col-md-6 order-md-0'
@@ -51,7 +51,12 @@ const PortfolioBig = (props) => {
 												className='text-dark'
 												href={'/portfolio_details?id=' + item.id}
 											>
-												<button className='button-secondary'>Saiba mais</button>
+												<button
+													className='button-secondary'
+													style={{ textTransform: 'uppercase' }}
+												>
+													Ver Caso de Estudo
+												</button>
 											</a>
 										</div>
 									</div>

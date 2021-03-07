@@ -52,13 +52,13 @@ const PortfolioCards = (props) => {
 		<>
 			{portfolio_list &&
 				portfolio_list.map((arr, index) => (
-					<div className='row justify-content-center'>
+					<div
+						className='row justify-content-center'
+						style={{ marginTop: 50, marginBottom: 50 }}
+					>
 						{arr.map((item, index) => (
 							<Fade bottom delay={index * 100}>
-								<div
-									key={index}
-									className='col-md  mb-6 custom-card'
-								>
+								<div key={index} className='col-md  mb-6 custom-card'>
 									<a
 										href={'/portfolio_details?id=' + item.id}
 										className='text-dark'
