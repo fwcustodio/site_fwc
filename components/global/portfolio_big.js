@@ -1,106 +1,142 @@
 import { useEffect, useState } from 'react';
 const axios = require('axios');
 import Fade from 'react-reveal/Fade';
+import { getProjetosCasoEstudo } from '../../servicos';
 
 const PortfolioBig = (props) => {
-	const [portfolio_list, setPortfolioList] = useState([]);
+	const [portfolio_list, setPortfolioList] = useState();
 
 	useEffect(() => {
-		axios
-			.get('https://run.mocky.io/v3/7e752746-5ccc-4601-abbe-24078e3190f9')
-			.then((res) => {
-				let limit =
-					typeof props.limit == 'undefined' ? res.data.length : props.limit;
-				let start = typeof props.start == 'undefined' ? 0 : props.start;
+		const funcAuxiliar = async () => {
+			let portfolio_listAux = await getProjetosCasoEstudo();
 
-				res.data = res.data.slice(start, limit);
+			console.log('portfolio_listAux : ' + JSON.stringify(portfolio_listAux));
+			setPortfolioList(portfolio_listAux);
+		};
 
-				setPortfolioList(res.data);
-			});
+		funcAuxiliar();
 	}, []);
 
 	return (
 		<>
-			{portfolio_list.map((item, index) => (
-				<>
-					{index % 2 == 0 ? (
-						<Fade left>
-							<div className='card mb-5' style={{ marginTop: 25 }}>
-								<div className='row no-gutters'>
-									<div
-										className='col-md-6 order-md-0'
-										style={{ height: '250px' }}
-									>
-										<a href={'/portfolio_details?id=' + item.id}>
-											<img
-												className='img-fluid w-100'
-												src={item.image}
-												style={{ height: '250px' }}
-											/>
-										</a>
-									</div>
-									<div className='col-md-6 order-md-1'>
-										<div className='card-body background-primary text-light d-flex align-items-center justify-content-center h-100 flex-column'>
-											<p className='h3 card-title font-weight-bold text-uppercase text-left mb-2'>
-												{item.title}
-											</p>
-											<p className='card-text font-weight-light text-center mb-4'>
-												{item.description}
-											</p>
-											<a
-												className='text-dark'
-												href={'/portfolio_details?id=' + item.id}
+			{portfolio_list &&
+				portfolio_list.map((item, index) => (
+					<>
+						{index % 2 == 0 ? (
+							<Fade left>
+								<div className='card mb-5' style={{ marginTop: 25 }}>
+									<div className='row no-gutters'>
+										<div
+											className='col-md-6 order-md-0'
+											style={{ height: item.ordem == 1 ? 250 : 300 }}
+										>
+											<a href={'/portfolio_details?id=' + item.id}>
+												<img
+													className='img-fluid w-100'
+													src={item.banner_caso_estudo}
+													style={{ height: item.ordem == 1 ? 250 : 300 }}
+												/>
+											</a>
+										</div>
+										<div className='col-md-6 order-md-1'>
+											<div
+												className='card-body  text-light d-flex align-items-center justify-content-center h-100 flex-column'
+												style={{ marginLeft: 'auto', marginRight: 'auto' }}
 											>
-												<button
-													className='button-secondary'
-													style={{ textTransform: 'uppercase' }}
+												<p
+													className='h3 card-title font-weight-bold text-uppercase text-left mb-2'
+													style={{
+														fontSize: 20,
+														color: 'black',
+														textAlign: 'center',
+													}}
 												>
-													Ver Caso de Estudo
-												</button>
-											</a>
+													{item.nome}
+												</p>
+												<p
+													className='card-text font-weight-light text-center mb-4'
+													style={{
+														marginTop: 5,
+														marginBottom: 30,
+														fontSize: 17,
+														textAlign: 'center',
+														color: '#687281',
+													}}
+												>
+													{item.caso_estudo_descricao}
+												</p>
+												<a
+													className='text-dark'
+													href={'/portfolio_details?id=' + item.id}
+												>
+													<button
+														className='button-secondary'
+														style={{ textTransform: 'uppercase' }}
+													>
+														Ver Caso de Estudo
+													</button>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</Fade>
-					) : (
-						<Fade right>
-							<div className='card mb-5' style={{}}>
-								<div className='row no-gutters'>
-									<div
-										className='col-md-6 order-md-1'
-										style={{ height: '250px' }}
-									>
-										<a href={'/portfolio_details?id=' + item.id}>
-											<img
-												className='img-fluid w-100'
-												src={item.image}
-												style={{ height: '250px' }}
-											/>
-										</a>{' '}
-									</div>
-									<div className='col-md-6 order-md-0'>
-										<div className='card-body background-primary text-light d-flex align-items-center justify-content-center h-100 flex-column'>
-											<p className='h3 card-title font-weight-bold text-uppercase text-left mb-2'>
-												{item.name}
-											</p>
-											<p className='card-text font-weight-light text-center mb-4'>
-												{item.description}
-											</p>
-											<a
-												className='text-dark'
-												href={'/portfolio_details?id=' + item.id}
-											>
-												<button className='button-secondary'>Saiba mais</button>
-											</a>
+							</Fade>
+						) : (
+							<Fade right>
+								<div className='card mb-5' style={{}}>
+									<div className='row no-gutters'>
+										<div
+											className='col-md-6 order-md-1'
+											style={{ height: 300 }}
+										>
+											<a href={'/portfolio_details?id=' + item.id}>
+												<img
+													className='img-fluid w-100'
+													src={item.banner_caso_estudo}
+													style={{ height: item.ordem == 1 ? 250 : 300 }}
+												/>
+											</a>{' '}
+										</div>
+										<div className='col-md-6 order-md-0'>
+											<div className='card-body text-light d-flex align-items-center justify-content-center h-100 flex-column'>
+												<p
+													className='h3 card-title font-weight-bold text-uppercase text-left mb-2'
+													style={{
+														fontSize: 20,
+														color: 'black',
+														textAlign: 'center',
+													}}
+												>
+													{item.nome}
+												</p>
+												<p
+													className='card-text font-weight-light text-center mb-4'
+													style={{
+														marginTop: 5,
+														marginBottom: 30,
+														fontSize: 17,
+														textAlign: 'center',
+														color: '#687281',
+													}}
+												>
+													{item.caso_estudo_descricao}
+												</p>
+												<a
+													className='text-dark'
+													href={'/portfolio_details?id=' + item.id}
+												>
+													<button className='button-secondary'>
+														Ver Caso de Estudo
+													</button>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</Fade>
-					)}
-				</>
-			))}
+							</Fade>
+						)}
+					</>
+				))}
 		</>
 	);
 };

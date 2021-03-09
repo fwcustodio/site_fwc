@@ -11,7 +11,9 @@ const getProjetos = async () => {
 };
 
 const getClientes = async () => {
-	return await axios.get(`https://run.mocky.io/v3/9a7d00c4-fd57-421a-b047-d9a89daf474f`);
+	return await axios.get(
+		`https://run.mocky.io/v3/9a7d00c4-fd57-421a-b047-d9a89daf474f`
+	);
 };
 
 const getProjetoDetalhes = async (ProjetoID) => {
@@ -19,7 +21,14 @@ const getProjetoDetalhes = async (ProjetoID) => {
 		projeto_id: ProjetoID,
 	});
 };
+
+const getProjetosCasoEstudo = async () => {
+	let Resp = await axios.post(`${BaseAPI}/projetos/getProjetosCasoEstudo`);
+	return Resp ? Resp.data : null;
+};
+
 module.exports.getClientes = getClientes;
 module.exports.getProjetos = getProjetos;
 module.exports.getProjetosHome = getProjetosHome;
 module.exports.getProjetoDetalhes = getProjetoDetalhes;
+module.exports.getProjetosCasoEstudo = getProjetosCasoEstudo;
