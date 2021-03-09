@@ -224,7 +224,7 @@ const PortfolioDetails = () => {
 										/>
 										<br />
 										<br />
-										<p style={{ textAlign: 'left' }}>
+										<p style={{ textAlign: 'left', color: '#687281' }}>
 											{ReactHtmlParser(project.descricao)}
 										</p>
 										<hr></hr>
