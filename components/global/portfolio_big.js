@@ -111,7 +111,7 @@ const PortfolioBig = (props) => {
 													<img
 														className='img-fluid w-100'
 														src={item.banner}
-														style={{ minHeight: 100 }}
+														style={{ height: '100%', minHeight: 100 }}
 													/>
 												</a>{' '}
 											</div>
