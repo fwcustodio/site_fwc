@@ -68,7 +68,7 @@ const Header = () => {
 					<Navbar
 						className='background-primary header2 width-80-vw pb-md-0'
 						expand='lg'
-						style={{ minHeight: 100 }}
+						style={{ minHeight: 70, maxHeight: 100, height: '5.5rem' }}
 					>
 						<Navbar.Brand className='text-light' href='/'>
 							<img src='/static/logo_fundo_vermelho.png' width='130' />

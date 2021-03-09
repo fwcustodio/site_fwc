@@ -85,7 +85,10 @@ class Home extends React.Component {
 							<Fade right>
 								<div
 									className='col-lg-4 pl-lg-5 text-center text-lg-right '
-									style={{ marginBottom: '-8rem' }}
+									style={{
+										marginBottom: '-7rem',
+										marginTop: 35,
+									}}
 								>
 									<img
 										src='https://firebasestorage.googleapis.com/v0/b/site-fwc.appspot.com/o/celular.png?alt=media&token=7f6bce66-08c1-4f92-8b3e-c9d82122f98c'
@@ -94,6 +97,9 @@ class Home extends React.Component {
 												? 'img-fluid'
 												: 'img-fluid'
 										}
+										style={{
+											maxHeight: 500,
+										}}
 									/>
 								</div>
 							</Fade>
