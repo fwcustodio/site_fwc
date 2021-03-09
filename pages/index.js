@@ -88,18 +88,12 @@ class Home extends React.Component {
 									style={{ marginBottom: '-8rem' }}
 								>
 									<img
-										src='https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=280'
+										src='https://firebasestorage.googleapis.com/v0/b/site-fwc.appspot.com/o/celular.png?alt=media&token=7f6bce66-08c1-4f92-8b3e-c9d82122f98c'
 										className={
 											'mb-5 mb-lg-0 ' + this.mobileAndTabletCheck
 												? 'img-fluid'
 												: 'img-fluid'
 										}
-										style={{
-											borderRadius: '20px',
-
-											boxShadow:
-												'0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;',
-										}}
 									/>
 								</div>
 							</Fade>
