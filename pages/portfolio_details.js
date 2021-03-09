@@ -59,15 +59,15 @@ const PortfolioDetails = () => {
 		ImagensProjetoParm,
 		current_image_parm = 0
 	) => {
-		console.log('ImagensProjetoParm : ' + JSON.stringify(ImagensProjetoParm));
-		console.log('current_image_parm : ' + current_image_parm);
+		//console.log('ImagensProjetoParm : ' + JSON.stringify(ImagensProjetoParm));
+		//console.log('current_image_parm : ' + current_image_parm);
 
 		let number_of_images = ImagensProjetoParm
 			? ImagensProjetoParm.length
 			: ImagensProjeto.length;
 
-		console.log('number_of_images : ' + number_of_images);
-		console.log('InteracaoUsuario : ' + InteracaoUsuario);
+		//console.log('number_of_images : ' + number_of_images);
+		//console.log('InteracaoUsuario : ' + InteracaoUsuario);
 
 		if (!InteracaoUsuario) {
 			setInterval(() => {
@@ -88,10 +88,6 @@ const PortfolioDetails = () => {
 			{project != false ? (
 				<div>
 					<main>
-						{ImagensProjeto &&
-							ImagensProjeto.map((img) => {
-								<img src={img.link} style={{ display: 'none' }} />;
-							})}
 						<section className='text-light background-primary waves'>
 							<div className='spacer' />
 							<div className='width-80-vw page-header-content'>
@@ -174,7 +170,7 @@ const PortfolioDetails = () => {
 												</button>
 
 												<IPhoneX
-													width={330}
+													width={300}
 													height={700}
 													screenshot={
 														ImagensProjeto && ImagensProjeto[current_image].link
@@ -222,7 +218,7 @@ const PortfolioDetails = () => {
 								<div className='row justify-content-center'>
 									<div className='col-lg-8'>
 										<img
-											src={project.banner_maior}
+											src={project.banner}
 											className='img-fluid'
 											style={{ marginTop: 20, marginBottom: 20 }}
 										/>

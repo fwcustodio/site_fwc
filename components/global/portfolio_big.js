@@ -28,13 +28,13 @@ const PortfolioBig = (props) => {
 									<div className='row no-gutters'>
 										<div
 											className='col-md-6 order-md-0'
-											style={{ height: item.ordem == 1 ? 250 : 300 }}
+											style={{ minHeight: 100 }}
 										>
 											<a href={'/portfolio_details?id=' + item.id}>
 												<img
 													className='img-fluid w-100'
-													src={item.banner_caso_estudo}
-													style={{ height: item.ordem == 1 ? 250 : 300 }}
+													src={item.banner}
+													style={{ height: '100%', minHeight: 100 }}
 												/>
 											</a>
 										</div>
@@ -87,13 +87,13 @@ const PortfolioBig = (props) => {
 									<div className='row no-gutters'>
 										<div
 											className='col-md-6 order-md-1'
-											style={{ height: 300 }}
+											style={{ minHeight: 100 }}
 										>
 											<a href={'/portfolio_details?id=' + item.id}>
 												<img
 													className='img-fluid w-100'
-													src={item.banner_caso_estudo}
-													style={{ height: item.ordem == 1 ? 250 : 300 }}
+													src={item.banner}
+													style={{ minHeight: 100 }}
 												/>
 											</a>{' '}
 										</div>
