@@ -439,7 +439,7 @@ class Home extends React.Component {
 						</div>
 					</div>
 					<hr></hr>
-					<div className='width-80-vw shaded'>
+					<div className='width-80-vw shaded' style={{ maxWidth: 800 }}>
 						<FAQ
 							questions={[
 								'Qual o prazo para construir um aplicativo?',

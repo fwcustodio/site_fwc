@@ -7,36 +7,54 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(20),
-    fontWeight: theme.typography.fontWeightBold,
-  },
+	root: {
+		width: '100%',
+	},
+	heading: {
+		fontSize: theme.typography.pxToRem(20),
+		fontWeight: theme.typography.fontWeightBold,
+	},
 }));
 
 function FAQ(props) {
-  const classes = useStyles();
+	const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      {props.questions.map((item, key) => <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography className={classes.heading}>{item}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            {props.answers[key]}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>)}
-    </div>
-  );
+	return (
+		<div className={classes.root}>
+			{props.questions.map((item, key) => (
+				<Accordion>
+					<AccordionSummary
+						expandIcon={<ExpandMoreIcon />}
+						aria-controls='panel1a-content'
+						id='panel1a-header'
+					>
+						<Typography
+							className={classes.heading}
+							style={{
+								fontSize: '1rem',
+								fontFamily:
+									'Metropolis,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+							}}
+						>
+							{item}
+						</Typography>
+					</AccordionSummary>
+					<AccordionDetails>
+						<Typography
+							style={{
+								fontSize: '1rem',
+								color: '#687281',
+								fontFamily:
+									'Metropolis,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji',
+							}}
+						>
+							{props.answers[key]}
+						</Typography>
+					</AccordionDetails>
+				</Accordion>
+			))}
+		</div>
+	);
 }
 
 export default FAQ;
