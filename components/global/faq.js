@@ -27,6 +27,13 @@ function FAQ(props) {
 						expandIcon={<ExpandMoreIcon />}
 						aria-controls='panel1a-content'
 						id='panel1a-header'
+						style={{
+							paddingTop: 5,
+							paddingBottom: 5,
+							margin: 15,
+							marginBottom: 0,
+							marginTop: 0,
+						}}
 					>
 						<Typography
 							className={classes.heading}
