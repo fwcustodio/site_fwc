@@ -46,7 +46,13 @@ function FAQ(props) {
 							{item}
 						</Typography>
 					</AccordionSummary>
-					<AccordionDetails>
+					<AccordionDetails
+						style={{
+							margin: 15,
+							marginBottom: 0,
+							marginTop: 0,
+						}}
+					>
 						<Typography
 							style={{
 								fontSize: '1rem',
